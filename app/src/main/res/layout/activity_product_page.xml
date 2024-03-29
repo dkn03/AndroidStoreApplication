@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_product_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="product_page.ProductActivity">
+
+    <include
+        android:id="@+id/go_back_layout"
+        layout="@layout/go_back_item"
+        android:layout_width="150dp"
+
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Название товара"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_back_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_page_image_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_name"
+        tools:listitem="@layout/product_page_image"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_page_image_recycler_view">
+
+        <TextView
+            android:id="@+id/product_page_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="15000$"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/product_page_add_product_button"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            android:backgroundTint="#9A9999"
+            android:padding="0dp"
+            android:singleLine="false"
+            android:text="Добавить в корзину"
+            android:textColorHighlight="#C6C6C6"
+            android:textColorLink="#C6C6C6" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/product_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Оценка: 0.0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/features_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Характеристики"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_rating" />
+
+    <ScrollView
+        android:id="@+id/features_scrollable"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/features_title">
+
+        <LinearLayout
+            android:id="@+id/features_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/feature_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Характеристика 1:"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Значение характеристики 1аааааааааааааааааааааааааааааа
+                    аааааааааааааааааааааааааааааааааааааааа
+                    ааааааааааааааааааа:"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/feature_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Характеристика 2:"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Значение характеристики 2"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/feature_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Характеристика 3:"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Значение характеристики 3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/feature_layout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Характеристика 2:"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Значение характеристики 2"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/feature_layout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Характеристика 2:"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Значение характеристики 2"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/feature_layout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Характеристика 2:"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Значение характеристики 2"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/features_scrollable">
+
+        <TextView
+            android:id="@+id/popular_review_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="Популярный отзыв" />
+
+        <TextView
+            android:id="@+id/all_reviews_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="end"
+            android:text="Все отзывы" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="166dp"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <TextView
+            android:id="@+id/review_grade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Оценка: 4.0" />
+
+        <TextView
+            android:id="@+id/review_full_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв Длинный отзыв " />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
